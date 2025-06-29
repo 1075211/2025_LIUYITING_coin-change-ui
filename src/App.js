@@ -12,7 +12,6 @@ import {
 
 const { Title, Paragraph, Text } = Typography;
 const { Content } = Layout;
-REACT_APP_BACKEND=http://13.215.250.116:8080
 
 function App() {
   const [targetAmount, setTargetAmount] = useState("");
@@ -64,7 +63,8 @@ function App() {
     };
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_BACKEND}/coin-change`, {
+      //const res = await fetch("http://localhost:8080/coin-change", {
+      const res = await fetch("http://13.215.250.116:8080/coin-change", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
